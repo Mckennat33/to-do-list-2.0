@@ -29,8 +29,21 @@ function addToDo(e){
     addedToDoItem.classList.add("list-item")
     addedToDoItem.innerHTML = newToDoValue
 
+    // make a checkbox
+    const checkBox = document.createElement("input")
+    checkBox.type = "checkbox"
+    checkBox.id = "checkbox"
+    checkBox.classList.add("checkBox")
+
+    
+
+
     listItemsDisplay.appendChild(addedToDoItem)
-    console.log(toDoItemEntered)
+    addedToDoItem.appendChild(checkBox)
+    
+
+
+
 
 }
 
