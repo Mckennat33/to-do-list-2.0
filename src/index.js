@@ -6,13 +6,8 @@ const toDoForm = document.querySelector(".list-items-div")
 const listItemsDisplay = document.querySelector(".list-items-display")
 const addBttn = document.querySelector(".add-bttn")
 
-const toDoItemsArray = [
-    {
-        id: new Date().getTime(),
-        text: "",
-        completed: false
-    }
-]
+
+
 addBttn.addEventListener("click", addToDo)
 
 function addToDo(e){
@@ -42,15 +37,21 @@ function addToDo(e){
     toDoItemsArray.push(toDoItemEntered)
 
     const addedToDoItem = document.createElement("li")
-    addedToDoItem.classList.add("list-item")
+    addedToDoItem.setAttribute("id", toDoItemEntered.id)
+    // addedToDoItem.classList.add("list-item")
     addedToDoItem.innerHTML = newToDoValue
 
-
-
+    const deleteBttn = document.createElement("button")
+    deleteBttn.classList.add("delete-bttn")
+    deleteBttn.innerHTML = "Delete"
+    deleteBttn.addEventListener("click", function() {
+        addedToDoItem.remove()
+    })
 
 
     listItemsDisplay.appendChild(addedToDoItem)
     addedToDoItem.appendChild(checkBox)
+    addedToDoItem.appendChild(deleteBttn)
 }
 
 
