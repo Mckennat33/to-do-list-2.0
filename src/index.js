@@ -13,7 +13,7 @@ addBttn.addEventListener("click", addToDo)
 function addToDo(e){
     e.preventDefault()
     const newToDoValue = newToDo.value
-
+    let toDoItemsArray = []
    // make a checkbox
     const checkBox = document.createElement("input")
     checkBox.type = "checkbox"
